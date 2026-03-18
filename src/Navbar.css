@@ -1,0 +1,12 @@
+/* Temporary navbar stylesheet to satisfy import.
+   We can later replace this with full design or Tailwind classes. */
+
+/* Basic reset for the wrapper */
+#boxed-wrapper {
+  width: 100%;
+}
+
+.fusion-tb-header {
+  width: 100%;
+}
+

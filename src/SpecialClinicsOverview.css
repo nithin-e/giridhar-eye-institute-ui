@@ -1,0 +1,284 @@
+/* SpecialClinicsOverview.css (matches screenshot layout) */
+
+.sco {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #fff;
+  padding: 56px 16px;
+}
+
+.sco__wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 56px;
+  align-items: center;
+}
+
+.sco__left {
+  animation: scoFadeLeft 700ms ease-out both;
+}
+
+.sco__kicker {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #3f5ceb;
+}
+
+.sco__title {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.sco__desc {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+  max-width: 520px;
+}
+
+.sco__descStrong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.sco__btn {
+  margin-top: 18px;
+  background: #1d4ed8;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  padding: 12px 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sco__btn:hover {
+  filter: brightness(0.95);
+}
+
+.sco__right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  animation: scoPopIn 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 80ms;
+}
+
+.sco__ring {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  display: grid;
+  place-items: center;
+}
+
+.sco__ringDots {
+  position: absolute;
+  inset: 22px;
+  border-radius: 999px;
+  border: 2px dashed rgba(59, 130, 246, 0.45);
+  animation: scoSpin 26s linear infinite;
+}
+
+.sco__center {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  background: radial-gradient(120% 120% at 30% 20%, #2dd4bf 0%, #0ea5a4 45%, #0b5567 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  display: grid;
+  place-items: center;
+  animation: scoCenterGlow 3.6s ease-in-out infinite;
+}
+
+.sco__centerCard {
+  width: 78%;
+  text-align: center;
+  color: #fff;
+}
+
+.sco__centerCard--swap {
+  animation: scoSwap 220ms ease-out both;
+}
+
+.sco__centerTitle {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sco__centerDesc {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.sco__icon {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: #ff6b6b;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+  display: grid;
+  place-items: center;
+
+  /* place around ring */
+  top: 50%;
+  left: 50%;
+  transform: rotate(var(--deg)) translateX(205px) rotate(calc(var(--deg) * -1));
+  animation: scoFloat 3.2s ease-in-out infinite;
+}
+
+.sco__iconInner {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111827;
+  font-size: 11px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  letter-spacing: 0.2px;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.sco__icon:hover .sco__iconInner {
+  transform: scale(1.05);
+}
+
+.sco__icon:active .sco__iconInner {
+  transform: scale(0.98);
+}
+
+.sco__icon.is-active {
+  outline: 3px solid rgba(59, 130, 246, 0.65);
+  outline-offset: 2px;
+}
+
+.sco__icon.is-active .sco__iconInner {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* Vary icon colors like screenshot */
+.sco__icon:nth-of-type(1) { background: #fb7185; }
+.sco__icon:nth-of-type(2) { background: #fb7185; }
+.sco__icon:nth-of-type(3) { background: #fb7185; }
+.sco__icon:nth-of-type(4) { background: #fb7185; }
+.sco__icon:nth-of-type(5) { background: #fb7185; }
+.sco__icon:nth-of-type(6) { background: #fb7185; }
+.sco__icon:nth-of-type(7) { background: #2563eb; }
+
+.sco__badge {
+  position: absolute;
+  right: -8px;
+  bottom: 18px;
+  background: #0ea5a4;
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+  animation: scoBadgeIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 220ms;
+}
+
+@keyframes scoFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scoPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scoBadgeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scoFloat {
+  0%, 100% { transform: rotate(var(--deg)) translateX(205px) rotate(calc(var(--deg) * -1)) translateY(0); }
+  50% { transform: rotate(var(--deg)) translateX(205px) rotate(calc(var(--deg) * -1)) translateY(-3px); }
+}
+
+@keyframes scoCenterGlow {
+  0%, 100% { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18); }
+  50% { box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22); }
+}
+
+@keyframes scoSwap {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1100px) {
+  .sco__wrap {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sco__right {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .sco__ring {
+    width: 340px;
+    height: 340px;
+  }
+  .sco__center {
+    width: 230px;
+    height: 230px;
+  }
+  .sco__icon {
+    transform: rotate(var(--deg)) translateX(165px) rotate(calc(var(--deg) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sco__left,
+  .sco__right,
+  .sco__ringDots,
+  .sco__center,
+  .sco__icon,
+  .sco__badge,
+  .sco__centerCard--swap {
+    animation: none !important;
+  }
+}
+

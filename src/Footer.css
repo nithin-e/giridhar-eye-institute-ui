@@ -1,0 +1,317 @@
+.footer {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #1a1d1f;
+  color: #c5c5c5;
+  padding: 3rem 1rem 1rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.resources-title {
+  margin-top: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #c5c5c5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  line-height: 1.5;
+}
+
+.footer-links a:hover {
+  color: #f37258;
+  text-decoration: underline;
+}
+
+.subscribe-form {
+  width: 100%;
+}
+
+.subscribe-input-group {
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  background: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.subscribe-input::placeholder {
+  color: #999;
+}
+
+.subscribe-button {
+  padding: 0.8rem 1.5rem;
+  background: #01b08d;
+  color: white;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.subscribe-button:hover {
+  background: #008b6f;
+}
+
+.checkbox-label {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #c5c5c5;
+}
+
+.checkbox-label input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  flex: 1;
+}
+
+.subscription-success {
+  background: #01b08d;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  animation: footerFadeIn 0.3s ease;
+}
+
+@keyframes footerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-brand {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.brand-tagline {
+  color: #c5c5c5;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #c5c5c5;
+}
+
+.footer-bottom-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.bottom-link {
+  color: #c5c5c5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.bottom-link:hover {
+  color: #f37258;
+  text-decoration: underline;
+}
+
+.separator {
+  color: #c5c5c5;
+  font-size: 0.9rem;
+}
+
+.footer-disclaimer {
+  background: #2a2b2c;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border: 1px solid #444;
+}
+
+.disclaimer-title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.disclaimer-text {
+  color: #c5c5c5;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0 0 0.75rem 0;
+}
+
+.disclaimer-contact {
+  color: #c5c5c5;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.disclaimer-contact strong {
+  color: #01b08d;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .footer-bottom-links {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe-input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .subscribe-button {
+    width: 100%;
+  }
+
+  .checkbox-label {
+    text-align: left;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+  }
+
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .footer-disclaimer {
+    padding: 1rem;
+  }
+
+  .disclaimer-title {
+    font-size: 0.9rem;
+  }
+
+  .disclaimer-text,
+  .disclaimer-contact {
+    font-size: 0.8rem;
+  }
+}
+

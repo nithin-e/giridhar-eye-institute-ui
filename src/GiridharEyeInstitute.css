@@ -1,0 +1,142 @@
+.gei-container {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.gei-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.gei-main-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #0a4b7a;
+  margin-bottom: 0.25rem;
+}
+
+.gei-tagline {
+  font-size: 1.2rem;
+  color: #3a9b5e;
+  font-style: italic;
+}
+
+.gei-section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gei-section-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #222;
+  position: relative;
+  display: inline-block;
+}
+
+.gei-section-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #3a9b5e;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.gei-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.gei-service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 5px solid #3a9b5e;
+}
+
+.gei-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.gei-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0a4b7a;
+  margin-bottom: 0.75rem;
+}
+
+.gei-card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+.gei-cta-section {
+  text-align: center;
+  background: #e6f3ed;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.gei-cta-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0a4b7a;
+  margin-bottom: 1.5rem;
+}
+
+.gei-cta-button {
+  display: inline-block;
+  background-color: #3a9b5e;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.75rem 2.5rem;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 8px rgba(58, 155, 94, 0.3);
+}
+
+.gei-cta-button:hover {
+  background-color: #2d7e4a;
+  transform: scale(1.02);
+}
+
+.gei-cta-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 640px) {
+  .gei-main-title {
+    font-size: 2rem;
+  }
+
+  .gei-section-heading {
+    font-size: 1.6rem;
+  }
+
+  .gei-cta-title {
+    font-size: 1.6rem;
+  }
+
+  .gei-service-card {
+    padding: 1.5rem 1.2rem;
+  }
+}
+

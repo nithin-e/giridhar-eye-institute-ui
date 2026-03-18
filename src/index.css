@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-direction-nav a {
+  width: 63px;
+  height: 63px;
+  line-height: 63px;
+  font-size: 25px;
+}
+
+.flex-control-paging li a {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.flex-control-paging li a.flex-active {
+  background: rgba(255, 255, 255, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+@keyframes geiLogoPulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+[data-anim='logo-pulse'] {
+  will-change: transform;
+  animation: geiLogoPulse 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anim='logo-pulse'] {
+    animation: none !important;
+  }
+}

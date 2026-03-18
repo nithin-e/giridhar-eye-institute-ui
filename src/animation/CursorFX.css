@@ -1,0 +1,97 @@
+.cfx {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cfx-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #0aa39a;
+  will-change: transform;
+}
+
+.cfx-ring {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid rgba(10, 163, 154, 0.75);
+  background: transparent;
+  opacity: 0.9;
+  will-change: transform, width, height, background, opacity;
+  transition: width 180ms ease, height 180ms ease, border-color 180ms ease, background 180ms ease,
+    opacity 180ms ease, transform 180ms ease;
+  display: grid;
+  place-items: center;
+}
+
+.cfx-ring .cfx-icon {
+  font-size: 16px;
+  color: rgba(10, 163, 154, 0.85);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  user-select: none;
+}
+
+.cfx-ring.is-action {
+  width: 48px;
+  height: 48px;
+  background: rgba(10, 163, 154, 0.2);
+  border-color: rgba(10, 163, 154, 0);
+  opacity: 1;
+}
+
+.cfx-ring.is-image {
+  width: 48px;
+  height: 48px;
+  background: rgba(10, 163, 154, 0.12);
+  border-color: rgba(10, 163, 154, 0.45);
+}
+
+.cfx-ring.is-image .cfx-icon {
+  opacity: 1;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label {
+    cursor: none;
+  }
+}
+
+/* Show default arrow while scrolling */
+@media (pointer: fine) {
+  html.cfx-scrolling body,
+  html.cfx-scrolling a,
+  html.cfx-scrolling button,
+  html.cfx-scrolling input,
+  html.cfx-scrolling textarea,
+  html.cfx-scrolling select,
+  html.cfx-scrolling label {
+    cursor: auto !important;
+  }
+
+  html.cfx-scrolling .cfx {
+    opacity: 0 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    cursor: auto !important;
+  }
+  .cfx {
+    display: none !important;
+  }
+}
+

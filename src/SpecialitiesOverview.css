@@ -1,0 +1,217 @@
+/* SpecialClinicsOverview.css */
+
+.clinics-overview {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header Section */
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.institute-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #0a4b7a;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.website-link {
+  font-size: 1.1rem;
+  color: #3f5ceb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.website-link:hover {
+  color: #01b08d;
+  text-decoration: underline;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 2px solid #f0f0f0;
+  margin: 2rem 0;
+}
+
+/* Clinics Content */
+.clinics-content {
+  padding: 1rem 0;
+}
+
+.clinics-main-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #3f5ceb;
+  margin: 0 0 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.clinics-subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333333;
+  margin: 0 0 1.5rem 0;
+}
+
+.clinics-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  max-width: 900px;
+}
+
+.clinics-description strong {
+  color: #01b08d;
+  font-weight: 600;
+}
+
+.learn-more-btn {
+  background: linear-gradient(138deg, #1455fe 0%, #01b08d 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  margin-bottom: 3rem;
+}
+
+.learn-more-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.learn-more-btn:active {
+  transform: translateY(0);
+}
+
+/* Clinics Grid */
+.clinics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.clinic-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #01b08d;
+}
+
+.clinic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.clinic-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ff8c42;
+  margin-bottom: 1rem;
+}
+
+.clinic-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clinics-overview {
+    padding: 2rem 1rem;
+  }
+
+  .institute-name {
+    font-size: 1.8rem;
+  }
+
+  .website-link {
+    font-size: 1rem;
+  }
+
+  .clinics-main-title {
+    font-size: 2rem;
+  }
+
+  .clinics-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .clinics-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .learn-more-btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .clinics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .clinic-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .clinic-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .clinic-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .institute-name {
+    font-size: 1.5rem;
+  }
+
+  .clinics-main-title {
+    font-size: 1.8rem;
+  }
+
+  .clinics-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .learn-more-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .clinics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clinic-card {
+    padding: 1.2rem 1rem;
+  }
+}
