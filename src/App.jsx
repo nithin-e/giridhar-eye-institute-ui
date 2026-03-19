@@ -17,6 +17,7 @@ import OcularTraumaClinic from "./OcularTraumaClinic.jsx";
 import OutPatientServices from "./OutPatientServices.jsx";
 import OrthopticEvaluation from "./OrthopticEvaluation.jsx";
 import PrecisionScanningImagingSystems from "./PrecisionScanningImagingSystems.jsx";
+import DoctorsInKochi from "./DoctorsInKochi.jsx";
 
 
 export default function App() {
@@ -67,6 +68,16 @@ export default function App() {
       <>
         <Navbar />
         <PrecisionScanningImagingSystems />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === "/eye-doctors-in-kochi") {
+    return (
+      <>
+        <Navbar />
+        <DoctorsInKochi />
         <Footer />
       </>
     );

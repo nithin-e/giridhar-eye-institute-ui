@@ -21,7 +21,7 @@ const VisionMatters = () => {
       title: 'Diagnostic Accuracy of Macular Ganglion Cell Layer Thickness Measured by Spectralis SD OCT',
       link: '/breaking-free-from-limiting-beliefs-the-power-of-positive-mindset',
       imageUrl:
-        'https://images.unsplash.com/photo-1524503033411-f7a2fe8c7c0f?auto=format&fit=crop&w=1200&q=60',
+        'https://www.giridhareye.org/wp-content/uploads/2024/10/youtube-img-1-scaled.jpg',
     },
     {
       id: 3,
