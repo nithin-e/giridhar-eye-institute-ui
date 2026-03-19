@@ -12,10 +12,66 @@ import VisionMatters from "./VisionMatters.jsx";
 import UpcomingEvents from "./UpcomingEvents.jsx";
 import Footer from "./Footer.jsx";
 import SpecialClinicsSection from "./SpecialClinicsSection.jsx";
-import CursorFX from "./animation/CursorFX.jsx";
+import InPatientServices from "./InPatientServices.jsx";
+import OcularTraumaClinic from "./OcularTraumaClinic.jsx";
+import OutPatientServices from "./OutPatientServices.jsx";
+import OrthopticEvaluation from "./OrthopticEvaluation.jsx";
+import PrecisionScanningImagingSystems from "./PrecisionScanningImagingSystems.jsx";
 
 
 export default function App() {
+  const path = typeof window !== "undefined" ? window.location.pathname : "/";
+
+  if (path === "/services/in-patient-services") {
+    return (
+      <>
+        <Navbar />
+        <InPatientServices />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === "/services/ocular-trauma-clinic") {
+    return (
+      <>
+        <Navbar />
+        <OcularTraumaClinic />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === "/services/out-patient-services") {
+    return (
+      <>
+        <Navbar />
+        <OutPatientServices />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === "/services/orthoptic-evaluation") {
+    return (
+      <>
+        <Navbar />
+        <OrthopticEvaluation />
+        <Footer />
+      </>
+    );
+  }
+
+  if (path === "/services/precision-scanning-imaging-systems") {
+    return (
+      <>
+        <Navbar />
+        <PrecisionScanningImagingSystems />
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -31,7 +87,6 @@ export default function App() {
       <VisionMatters />
       <UpcomingEvents />
       <Footer />
-      <CursorFX />
     </>
   );
 }

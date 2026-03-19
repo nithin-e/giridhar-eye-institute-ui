@@ -211,6 +211,30 @@ const Navbar = () => {
     [],
   );
 
+  const academicsMega = useMemo(
+    () => ({
+      title: 'Academics',
+      image: 'https://www.giridhareye.org/wp-content/uploads/2024/11/Dr-Thomas.jpg',
+      items: [
+        { title: 'Fellowship', desc: 'Fellowships and Observerships at GEI' },
+        { title: 'Education & Training', desc: 'Advanced Ophthalmology Education and Training' },
+        { title: 'School Of Optometry', desc: 'Susruta School of Optometry & Visual Sciences (SSO)' },
+      ],
+    }),
+    [],
+  );
+
+  const servicesMenu = useMemo(
+    () => [
+      { label: 'In-Patient Services', href: '/services/in-patient-services' },
+      { label: 'Ocular Trauma Clinic', href: '/services/ocular-trauma-clinic' },
+      { label: 'Orthoptic Evaluation', href: '/services/orthoptic-evaluation' },
+      { label: 'Out-Patient Services', href: '/services/out-patient-services' },
+      { label: 'Precision Scanning & Imaging Systems', href: '/services/precision-scanning-imaging-systems' },
+    ],
+    [],
+  );
+
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
 
   // close dropdown on escape
@@ -367,16 +391,15 @@ const Navbar = () => {
 
                   {m.hasDropdown && activeDropdown === m.key ? (
                     m.key === 'specialities' ? (
-                      <div className="absolute left-1/2 top-full mt-2 w-[1120px] -translate-x-1/2 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
-                        <div className="grid grid-cols-[320px_1fr]">
-                          <div className="relative self-stretch">
+                      <div className="absolute left-1/2 top-full mt-2 w-[1180px] -translate-x-1/2 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
+                        <div className="grid grid-cols-[360px_1fr]">
+                          <div className="relative self-stretch bg-slate-50">
                             <img
                               src={specialitiesMega.image}
                               alt=""
-                              className="absolute inset-0 block h-full w-full object-cover"
+                              className="block h-full w-full object-contain object-left"
                               loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" aria-hidden="true" />
                           </div>
                           <div className="grid grid-cols-2 gap-12 px-12 py-10">
                             <div className="space-y-6">
@@ -415,16 +438,15 @@ const Navbar = () => {
                         </div>
                       </div>
                     ) : m.key === 'clinics' ? (
-                      <div className="absolute left-1/2 top-full mt-2 w-[1120px] -translate-x-1/2 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
-                        <div className="grid grid-cols-[320px_1fr]">
-                          <div className="relative self-stretch">
+                      <div className="absolute left-1/2 top-full mt-2 w-[1180px] -translate-x-1/2 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
+                        <div className="grid grid-cols-[360px_1fr]">
+                          <div className="relative self-stretch bg-slate-50">
                             <img
                               src={clinicsMega.image}
                               alt=""
-                              className="absolute inset-0 block h-full w-full object-cover"
+                              className="block h-full w-full object-contain object-left"
                               loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" aria-hidden="true" />
                           </div>
 
                           <div className="relative px-12 py-10">
@@ -533,6 +555,58 @@ const Navbar = () => {
                               {aboutMega.ctaLabel}
                             </a>
                           </div>
+                        </div>
+                      </div>
+                    ) : m.key === 'academics' ? (
+                      <div className="absolute left-1/2 top-full mt-2 w-[1120px] -translate-x-1/2 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
+                        <div className="grid grid-cols-[320px_1fr]">
+                          <div className="relative self-stretch">
+                            <img
+                              src={academicsMega.image}
+                              alt=""
+                              className="absolute inset-0 block h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                            <div
+                              className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
+                              aria-hidden="true"
+                            />
+                          </div>
+
+                          <div className="px-12 py-10">
+                            <div className="mb-7 text-[30px] font-semibold tracking-[-0.2px] text-slate-900">
+                              {academicsMega.title}
+                            </div>
+
+                            <div className="max-w-[560px] space-y-7">
+                              {academicsMega.items.map((it) => (
+                                <a key={it.title} href="#" className="group block">
+                                  <div className="text-[15px] font-semibold text-slate-800 group-hover:text-[#3563dc]">
+                                    {it.title}
+                                  </div>
+                                  <div className="mt-1 text-[12px] leading-relaxed text-slate-500">
+                                    {it.desc}
+                                  </div>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : m.key === 'services' ? (
+                      <div className="absolute left-1/2 top-full mt-2 w-[300px] -translate-x-1/2 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl">
+                        <div className="py-1">
+                          {servicesMenu.map((item, idx) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className={`block px-4 py-3 text-[13px] text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#3563dc] ${
+                                idx !== servicesMenu.length - 1 ? 'border-b border-slate-100' : ''
+                              }`}
+                            >
+                              {item.label}
+                            </a>
+                          ))}
                         </div>
                       </div>
                     ) : (

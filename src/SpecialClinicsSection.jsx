@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './SpecialClinicsSection.css';
 import { motion } from 'framer-motion';
 import { viewportOnce } from './animation/motionPresets';
@@ -7,12 +7,8 @@ import { prefersReducedMotion } from './animation/prefersReducedMotion';
 const ORBIT_MS = 16000;
 const NODES = 7;
 const STEP_DEG = 360 / NODES;
+const STEP_MS = Math.round(ORBIT_MS / NODES);
 const BASE_DEG = -90; // node 0 starts at top
-const TARGET_DEG = 180; // left-center (9 o'clock) in our coordinate system
-
-function mod(n, m) {
-  return ((n % m) + m) % m;
-}
 
 const Icon = ({ name }) => {
   switch (name) {
@@ -129,38 +125,20 @@ const SpecialClinicsSection = () => {
   const [displayIndex, setDisplayIndex] = useState(4); // drives center content + active node
   const [isFading, setIsFading] = useState(false);
   const [rippleKey, setRippleKey] = useState(0);
-  const startRef = useRef(performance.now());
-  const rafRef = useRef(0);
-  const fadeTimeoutRef = useRef(0);
-  const pendingIndexRef = useRef(displayIndex);
 
   useEffect(() => {
-    const tick = () => {
-      const now = performance.now();
-      const t = (now - startRef.current) % ORBIT_MS;
-      const rotationDeg = (t / ORBIT_MS) * 360;
+    if (prefersReducedMotion()) return undefined;
+    const interval = window.setInterval(() => {
+      setIsFading(true);
+      window.setTimeout(() => {
+        setDisplayIndex((prev) => (prev + 1) % NODES);
+        setIsFading(false);
+        setRippleKey((k) => k + 1);
+      }, 250);
+    }, STEP_MS);
 
-      const raw = (TARGET_DEG - rotationDeg - BASE_DEG) / STEP_DEG;
-      const idx = mod(Math.round(raw), NODES);
-
-      if (pendingIndexRef.current !== idx) {
-        pendingIndexRef.current = idx;
-        window.clearTimeout(fadeTimeoutRef.current);
-        setIsFading(true);
-        fadeTimeoutRef.current = window.setTimeout(() => {
-          setDisplayIndex(idx);
-          setIsFading(false);
-          setRippleKey((k) => k + 1);
-        }, 250);
-      }
-
-      rafRef.current = window.requestAnimationFrame(tick);
-    };
-
-    rafRef.current = window.requestAnimationFrame(tick);
     return () => {
-      window.cancelAnimationFrame(rafRef.current);
-      window.clearTimeout(fadeTimeoutRef.current);
+      window.clearInterval(interval);
     };
   }, []);
 
