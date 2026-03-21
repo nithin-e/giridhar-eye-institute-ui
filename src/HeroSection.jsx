@@ -202,27 +202,6 @@ const HeroSection = () => {
 
   return (
     <div ref={rootRef} id="sliders-container" className="fusion-slider-visibility" data-anim="hero">
-      <div className="w-full bg-gray-800 py-2.5">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center overflow-hidden">
-            <div className="animate-marquee whitespace-nowrap text-sm text-white">
-              <span className="mx-4">
-                24×7 Emergency Eye care service available at Kadavanthra branch | For
-                appointments, please contact us : Kadavanthra: 0484 4170000 | Edappally:
-                0484 4000582, 0484 4000583 | Thripunithura: 0484 291 8001, 0484 2918002,
-                0484 2918003 | Mattancherry: 0484 2221432, 0484 2221433.
-              </span>
-              <span className="mx-4">
-                24×7 Emergency Eye care service available at Kadavanthra branch | For
-                appointments, please contact us : Kadavanthra: 0484 4170000 | Edappally:
-                0484 4000582, 0484 4000583 | Thripunithura: 0484 291 8001, 0484 2918002,
-                0484 2918003 | Mattancherry: 0484 2221432, 0484 2221433.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div
         id="fusion-slider-26"
         className="fusion-slider-container relative w-full overflow-hidden"

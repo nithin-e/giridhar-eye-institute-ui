@@ -1,224 +1,102 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { revealCard, revealHeading, revealStaggerParent, viewportOnce } from "./animation/motionPresets";
+import './AboutSection.css';
 
-const features = [
+const aboutServiceCards = [
   {
-    id: 1,
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="8" r="4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M5 20a7 7 0 0114 0" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="18" cy="18" r="3" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.5"/>
-        <path d="M17 18l.8.8L19.5 17" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    title: "NABH Accredited Eye Hospital",
-    description: "NABH accredited, with advanced facilities and world-class eye care.",
+    title: 'NABH Accredited Eye Hospital',
+    desc: 'NABH accredited, with advanced facilities and world-class eye care.',
   },
   {
-    id: 2,
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-        <rect x="4" y="4" width="16" height="12" rx="2" stroke="white" strokeWidth="1.8"/>
-        <path d="M8 9h8M8 12h5" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="17" cy="17" r="3" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.5"/>
-        <path d="M15.8 17l.8.8 1.6-1.6" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    title: "Personalized and Inclusive Eye Care",
-    description: "We prioritize personalized eye care, tailoring treatments to each patient.",
+    title: 'Personalized and Inclusive Eye Care',
+    desc: 'We prioritize personalized eye care, tailoring treatments to each patient.',
   },
   {
-    id: 3,
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-        <circle cx="5" cy="17" r="2" stroke="white" strokeWidth="1.8"/>
-        <circle cx="12" cy="7" r="2" stroke="white" strokeWidth="1.8"/>
-        <circle cx="19" cy="14" r="2" stroke="white" strokeWidth="1.8"/>
-        <path d="M7 16l3.5-7.5M14 8.5l3.5 4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Four Centers Across Cochin",
-    description: "Four centers in Cochin, providing accessible, high-quality eye care.",
+    title: 'Four Centers Across Cochin',
+    desc: 'Four centers in Cochin, providing accessible, high-quality eye care.',
   },
   {
-    id: 4,
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-        <path d="M12 3C9 3 7 5 7 8c0 4 5 9 5 9s5-5 5-9c0-3-2-5-5-5z" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
-        <path d="M10 8l1.5 1.5L14 6.5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M6 19h12" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Affordable Eye Care Solutions",
-    description: "We provide high-quality eye care services at affordable costs.",
+    title: 'Affordable Eye Care Solutions',
+    desc: 'We provide high-quality eye care services at affordable costs.',
   },
 ];
 
-export default function AboutOurServices() {
-  const [hovered, setHovered] = useState(null);
-
+export default function AboutSection() {
   return (
     <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap');
+      <section className="gei-about">
+        <div className="gei-about__bg" aria-hidden="true" />
+        <div className="gei-about__container">
+          <div className="gei-about__content">
+            <h2 className="gei-about__title">Trusted Super-Specialty Eye Hospital in Kochi</h2>
+            <h3 className="gei-about__subtitle">Serving Kerala Since 1997</h3>
 
-        .aos-section {
-          background: #f0f8f6;
-          padding: 48px 24px 64px;
-          font-family: 'DM Sans', sans-serif;
-        }
+            <p>
+              Welcome to Giridhar Eye Institute (GEI) - the most trusted NABH-accredited super-specialty
+              eye hospital in Kochi, Kerala, delivering high-quality, affordable, and compassionate eye
+              care since 1997. With over two decades of excellence, GEI is known for its patient-first
+              approach, cutting-edge technology, and expert team of ophthalmologists.
+            </p>
+            <p>
+              We provide comprehensive eye care services across all major ophthalmic specialties,
+              including Cataract Surgery, Glaucoma Diagnosis & Management, Retina and Vitreous Services,
+              Cornea and Ocular Surface Treatments, Pediatric Ophthalmology & Squint Correction, Uvea &
+              Intraocular Inflammation Care, Orbit & Oculoplasty, Neuro-Ophthalmology, Ocular Oncology,
+              Artificial Eyes (Ocular Prosthesis) and Low Vision Rehabilitation.
+            </p>
+            <p>
+              We also offer routine eye check-ups, diabetic retinopathy screening, contact lens services,
+              low vision aids, and advanced laser & surgical procedures.
+            </p>
+            <p>
+              At Giridhar Eye Institute, we are dedicated to preserving and restoring vision through
+              personalized treatments, clinical excellence, and innovation making us the most trusted eye
+              hospital in Kerala.
+            </p>
 
-        .aos-btn-wrap {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 40px;
-        }
+            <div className="gei-about__stats">
+              <div className="gei-about__stat">
+                <span className="gei-about__statLabel">We're In Service</span>
+                <div className="gei-about__statValue">28+</div>
+                <div className="gei-about__statText">Years</div>
+              </div>
+              <div className="gei-about__stat">
+                <span className="gei-about__statLabel">Patient Visits</span>
+                <div className="gei-about__statValue">26 Lakhs+</div>
+                <div className="gei-about__statText">Patient Visits</div>
+              </div>
+            </div>
 
-        .aos-main-btn {
-          background: #17a689;
-          color: #fff;
-          font-family: 'DM Sans', sans-serif;
-          font-size: 0.95rem;
-          font-weight: 500;
-          padding: 13px 32px;
-          border-radius: 8px;
-          border: none;
-          cursor: pointer;
-          letter-spacing: 0.02em;
-          transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-          box-shadow: 0 4px 16px rgba(23,166,137,0.28);
-        }
+            <a href="#awb-open-oc__6183" className="gei-about__cta">
+              Get Your Appointment Today
+            </a>
+          </div>
 
-        .aos-main-btn:hover {
-          background: #0e8a70;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(23,166,137,0.32);
-        }
+          <div className="gei-about__imageWrap">
+            <img src="/about-building.png" alt="Giridhar Eye Institute building" className="gei-about__image" loading="lazy" />
+          </div>
+        </div>
+      </section>
 
-        .aos-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
-          max-width: 1160px;
-          margin: 0 auto;
-        }
+      <section className="aos-section">
+        <div className="aos-btn-wrap">
+          <button type="button" className="aos-main-btn">About Our Services</button>
+        </div>
 
-        @media (max-width: 960px) {
-          .aos-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 540px) {
-          .aos-grid { grid-template-columns: 1fr; }
-        }
-
-        .aos-card {
-          background: #e8f5f3;
-          border-radius: 16px;
-          padding: 36px 24px 32px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          border: 1.5px solid #c8e6e0;
-          transition: background 0.25s ease, transform 0.28s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s ease, border-color 0.25s ease;
-          cursor: default;
-        }
-
-        .aos-card:hover {
-          background: #d6eeea;
-          transform: translateY(-6px);
-          box-shadow: 0 12px 36px rgba(26,158,143,0.14);
-          border-color: #1a9e8f;
-        }
-
-        .aos-icon-box {
-          width: 72px;
-          height: 72px;
-          border-radius: 14px;
-          background: #1e4d8c;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 24px;
-          transition: background 0.25s ease, transform 0.25s ease;
-          box-shadow: 0 4px 16px rgba(30,77,140,0.22);
-        }
-
-        .aos-card:hover .aos-icon-box {
-          background: #163d72;
-          transform: scale(1.07) rotate(-3deg);
-        }
-
-        .aos-card-title {
-          font-size: 1.05rem;
-          font-weight: 600;
-          color: #1a2e3b;
-          margin-bottom: 12px;
-          line-height: 1.4;
-          letter-spacing: -0.01em;
-        }
-
-        .aos-card-desc {
-          font-size: 0.875rem;
-          color: #5a7080;
-          line-height: 1.7;
-          font-weight: 300;
-          margin-bottom: 28px;
-          flex: 1;
-        }
-
-        .aos-learn-btn {
-          background: #17a689;
-          color: #fff;
-          font-family: 'DM Sans', sans-serif;
-          font-size: 0.85rem;
-          font-weight: 500;
-          padding: 10px 24px;
-          border-radius: 7px;
-          border: none;
-          cursor: pointer;
-          letter-spacing: 0.02em;
-          transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-          width: 100%;
-          box-shadow: 0 2px 10px rgba(23,166,137,0.2);
-        }
-
-        .aos-learn-btn:hover {
-          background: #0e8a70;
-          transform: translateY(-1px);
-          box-shadow: 0 6px 18px rgba(23,166,137,0.28);
-        }
-      `}</style>
-
-      <motion.section
-        className="aos-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
-        <motion.div variants={revealHeading} className="aos-btn-wrap">
-          <button className="aos-main-btn">About Our Services</button>
-        </motion.div>
-
-        <motion.div variants={revealStaggerParent} className="aos-grid">
-          {features.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={revealCard}
-              className="aos-card"
-              onMouseEnter={() => setHovered(item.id)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              <div className="aos-icon-box">{item.icon}</div>
-              <div className="aos-card-title">{item.title}</div>
-              <p className="aos-card-desc">{item.description}</p>
-              <button className="aos-learn-btn">Learn More</button>
-            </motion.div>
+        <div className="aos-grid">
+          {aboutServiceCards.map((card) => (
+            <article key={card.title} className="aos-card">
+              <div className="aos-icon-box" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                  <rect x="5" y="5" width="14" height="14" rx="3" stroke="white" strokeWidth="1.7" />
+                  <path d="M9 12h6M12 9v6" stroke="white" strokeWidth="1.7" strokeLinecap="round" />
+                </svg>
+              </div>
+              <h4 className="aos-card-title">{card.title}</h4>
+              <p className="aos-card-desc">{card.desc}</p>
+              <button type="button" className="aos-learn-btn">Learn More</button>
+            </article>
           ))}
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
     </>
   );
 }

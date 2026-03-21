@@ -86,7 +86,7 @@ const specialities = [
     description:
       "Premature infants born with a birth weight of less than 2000 grams are prone to a blinding eye disease called Retinopathy of Prematurity.",
     image:
-      "https://images.unsplash.com/photo-1544991875-5dc1b05f5b49?w=400&q=80",
+      "https://images.unsplash.com/photo-1579684453377-73ed51ef308b?auto=format&fit=crop&w=900&q=80",
     highlight: ["Premature infants"],
   },
 ];
@@ -115,31 +115,30 @@ export default function Specialities() {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
 
         :root {
-          --bg: #f0f5f9;
+          --bg: #eef3f4;
           --card-bg: #ffffff;
-          --accent: #1a6b8a;
+          --accent: #114e9b;
           --accent-light: #e8f4f8;
-          --accent-warm: #c06b2f;
-          --text-primary: #1a2e3b;
-          --text-muted: #5a7080;
-          --border: #d4e4ec;
-          --shadow: 0 4px 24px rgba(26, 107, 138, 0.10);
-          --shadow-hover: 0 12px 40px rgba(26, 107, 138, 0.18);
-          --radius: 16px;
+          --accent-warm: #d78541;
+          --text-primary: #1c2940;
+          --text-muted: #3b465a;
+          --border: #dfe5e8;
+          --shadow: 0 6px 18px rgba(22, 41, 74, 0.06);
+          --shadow-hover: 0 8px 24px rgba(22, 41, 74, 0.1);
+          --radius: 10px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         .spec-section {
           background: var(--bg);
-          padding: 72px 24px 80px;
+          padding: 60px 20px 72px;
           font-family: 'DM Sans', sans-serif;
-          min-height: 100vh;
         }
 
         .spec-header {
           text-align: center;
-          margin-bottom: 56px;
+          margin-bottom: 44px;
         }
 
         .spec-header h2 {
@@ -171,8 +170,8 @@ export default function Specialities() {
         .spec-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          max-width: 1020px;
+          gap: 20px;
+          max-width: 1240px;
           margin: 0 auto;
         }
 
@@ -190,76 +189,95 @@ export default function Specialities() {
           border: 1px solid var(--border);
           box-shadow: var(--shadow);
           cursor: pointer;
-          transition: transform 0.28s cubic-bezier(.22,.68,0,1.2), box-shadow 0.28s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
           display: flex;
           flex-direction: column;
+          min-height: 446px;
         }
 
         .spec-card:hover, .spec-card.hovered {
-          transform: translateY(-6px) scale(1.012);
+          transform: translateY(-3px);
           box-shadow: var(--shadow-hover);
-          border-color: var(--accent);
+          border-color: #d7dee3;
         }
 
         .spec-img-wrap {
           position: relative;
-          width: 100%;
-          height: 180px;
+          width: calc(100% - 34px);
+          margin: 14px auto 8px;
+          height: 168px;
           overflow: hidden;
+          border-radius: 2px;
+          background: #f8fafb;
         }
 
         .spec-img-wrap img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.5s ease;
           display: block;
         }
 
-        .spec-card:hover .spec-img-wrap img,
-        .spec-card.hovered .spec-img-wrap img {
-          transform: scale(1.07);
+        .spec-img-wrap::before,
+        .spec-img-wrap::after {
+          content: "";
+          position: absolute;
+          top: -6px;
+          width: 8px;
+          height: 34px;
+          background: #ffffff;
+          z-index: 2;
+          pointer-events: none;
+          transform: skewX(-5deg);
+        }
+
+        .spec-img-wrap::before {
+          left: 8px;
+        }
+
+        .spec-img-wrap::after {
+          right: 8px;
         }
 
         .spec-img-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to bottom, transparent 40%, rgba(26,107,138,0.18) 100%);
-          pointer-events: none;
+          display: none;
         }
 
         .spec-body {
-          padding: 20px 20px 24px;
+          padding: 8px 26px 22px;
           flex: 1;
           display: flex;
           flex-direction: column;
         }
 
         .spec-title {
-          font-family: 'Playfair Display', serif;
-          font-size: 1.08rem;
-          font-weight: 600;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 1.02rem;
+          font-size: clamp(1.02rem, 1.1vw, 1.16rem);
+          font-weight: 700;
           color: var(--accent-warm);
-          margin-bottom: 10px;
-          line-height: 1.3;
+          margin-bottom: 8px;
+          line-height: 1.18;
+          letter-spacing: -0.01em;
           transition: color 0.2s;
         }
 
         .spec-card:hover .spec-title {
-          color: var(--accent);
+          color: #cb7a38;
         }
 
         .spec-desc {
-          font-size: 0.86rem;
+          font-size: 0.88rem;
+          font-size: clamp(0.88rem, 0.95vw, 0.98rem);
           color: var(--text-muted);
-          line-height: 1.72;
-          font-weight: 300;
+          line-height: 1.55;
+          font-weight: 500;
           flex: 1;
         }
 
         .highlight-word {
-          color: var(--accent);
-          font-weight: 500;
+          color: inherit;
+          font-weight: inherit;
           font-style: normal;
         }
 
@@ -267,21 +285,21 @@ export default function Specialities() {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          margin-top: 16px;
+          margin-top: 10px;
           font-size: 0.82rem;
           font-weight: 500;
           color: var(--accent);
           text-decoration: none;
           letter-spacing: 0.02em;
-          opacity: 0;
-          transform: translateY(4px);
-          transition: opacity 0.25s ease, transform 0.25s ease;
+          opacity: 1;
+          transform: none;
+          transition: color 0.2s ease;
         }
 
         .spec-card:hover .spec-cta,
         .spec-card.hovered .spec-cta {
           opacity: 1;
-          transform: translateY(0);
+          transform: none;
         }
 
         .spec-cta svg {

@@ -1,0 +1,40 @@
+.contact-ticker {
+  background: #1e293b;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 3px solid #7dd3fc;
+}
+
+.contact-ticker__trackWrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.contact-ticker__track {
+  display: flex;
+  width: max-content;
+  animation: contactTickerMove 24s linear infinite;
+}
+
+.contact-ticker__item {
+  white-space: nowrap;
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 11px 24px;
+}
+
+@keyframes contactTickerMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-ticker__track {
+    animation: none;
+  }
+}

@@ -200,8 +200,8 @@ const SpecialClinicsSection = () => {
 
             <motion.div
               className={`scs__center ${isFading ? 'is-fading' : ''}`}
-              initial={prefersReducedMotion() ? undefined : { scale: 0 }}
-              whileInView={prefersReducedMotion() ? undefined : { scale: 1 }}
+              initial={prefersReducedMotion() ? undefined : { scale: 0, x: '-50%', y: '-50%' }}
+              whileInView={prefersReducedMotion() ? undefined : { scale: 1, x: '-50%', y: '-50%' }}
               viewport={viewportOnce}
               transition={
                 prefersReducedMotion()

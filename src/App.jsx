@@ -1,5 +1,6 @@
 import Navbar from './Navbar.jsx';
 import HeroSection from './HeroSection.jsx';
+import ContactTicker from './ContactTicker.jsx';
 import AboutSection from './AboutSection.jsx';
 import GiridharEyeInstitute from './GiridharEyeInstitute.jsx';
 import Specialities from './Specialities.jsx';
@@ -87,10 +88,11 @@ export default function App() {
     <>
       <Navbar />
        <HeroSection />
+      <ContactTicker />
       <AboutSection /> 
-      {/* <GiridharEyeInstitute /> */}
+      
       <Specialities />
-      {/* <SpecialClinicsOverview/> */}
+     
       <OurServices />
       <SpecialClinicsSection />
       <MeetOurDoctors />
