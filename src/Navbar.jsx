@@ -588,7 +588,7 @@ const Navbar = () => {
                 <div className="nav-main__ctaWrap">
                   <a
                     href="#awb-open-oc__6183"
-                    className="nav-main__cta inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-gradient-to-r from-[#2563eb] to-[#0d9488] px-3 py-2 text-[12px] font-extrabold text-white shadow-sm hover:brightness-105 xl:px-4 xl:text-[13px]"
+                    className="nav-main__cta inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-[#2563eb] px-3 py-2 text-[12px] font-extrabold text-white shadow-sm hover:bg-[#1d4ed8] xl:px-4 xl:text-[13px]"
                   >
                     <Icon name="calendar" className="h-4 w-4 shrink-0" />
                     <span>Appointment</span>
