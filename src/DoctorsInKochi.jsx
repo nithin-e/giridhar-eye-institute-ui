@@ -474,6 +474,18 @@ const DoctorsInKochi = () => {
         <img className="dik-hero__img" src="/doctors-hero.png" alt="Trusted Eye Doctors in Kochi" />
       </section>
 
+      <section className="dik-intro" aria-label="About our eye doctors in Kochi">
+        <div className="dik-section__container">
+          <p className="dik-intro__text">
+            Discover the expertise of leading Eye Doctors in Kochi at Giridhar Eye Institute. Our esteemed
+            team of ophthalmologists and skilled eye surgeons offers a full spectrum of services, addressing
+            diverse eye conditions with advanced techniques. If you&apos;re looking for trusted and
+            comprehensive eye care services in Kochi, explore how our specialists can help you achieve
+            optimal vision.
+          </p>
+        </div>
+      </section>
+
       <section className="dik-section dik-dept">
         <div className="dik-section__container">
           <div className="dik-head">
